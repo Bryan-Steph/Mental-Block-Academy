@@ -1375,220 +1375,97 @@ section,
 }
 
 
-/*--------------------------------------------------------------
-# Faq Section
---------------------------------------------------------------*/
-.faq .content-subtitle {
-  font-size: 15px;
-  margin-bottom: 10px;
-  display: block;
-  color: var(--default-color);
+/* SPECIAL EFFECT BUTTON */
+/* General styling */
+
+.button-container {
+    text-align: center;
 }
 
-.faq .content-title {
-  color: var(--heading-color);
-  font-size: 22px;
-  margin-bottom: 30px;
+.animated-button {
+    background-color: #fff;
+    color: #080202;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
-.faq p {
-  line-height: 1.7;
-  color: var(--default-color);
+/* Button hover effects */
+.animated-button:hover {
+    background-color: #72beeb;
+    transform: scale(1.1);
+    animation: vibrate 0.2s infinite;
 }
 
-.faq .custom-accordion .accordion-item {
-  background-color: var(--surface-color);
-  margin-bottom: 0px;
-  position: relative;
-  border-radius: 0px;
-  overflow: hidden;
+/* Vibration animation */
+@keyframes vibrate {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+    75% {
+        transform: translateX(-2px);
+    }
 }
 
-.faq .custom-accordion .accordion-item .btn-link {
-  display: block;
-  width: 100%;
-  padding: 15px 0;
-  text-decoration: none;
-  text-align: left;
-  color: var(--default-color);
+/* Button focus effects */
+.animated-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+}
+
+/* FOR THE FLOATING BUTTON */
+
+/* Floating button styling */
+.floating-live-button {
+  position: fixed;
+  left: 10px; /* 10px from the right edge */
+  bottom: 20px; /* Adjust distance from the bottom */
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.floating-live-button button {
+  background-color: var(--accent-color);
+  color: #ffffff;
   border: none;
-  padding-left: 40px;
-  border-radius: 0;
-  position: relative;
-  background-color: color-mix(in srgb, var(--default-color), transparent 94%);
-}
-
-.faq .custom-accordion .accordion-item .btn-link:before {
-  content: "\f282";
-  display: inline-block;
-  font-family: "bootstrap-icons" !important;
-  font-style: normal;
-  font-weight: normal !important;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  vertical-align: -0.125em;
-  -webkit-font-smoothing: antialiased;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 15px;
-}
-
-.faq .custom-accordion .accordion-item .btn-link[aria-expanded=true] {
-  color: var(--accent-color);
-}
-
-.faq .custom-accordion .accordion-item .btn-link[aria-expanded=true]:before {
-  font-family: "bootstrap-icons" !important;
-  content: "\f286";
-  position: absolute;
-  color: var(--accent-color);
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.faq .custom-accordion .accordion-item .accordion-body {
-  padding: 20px 20px 20px 20px;
-  color: var(--default-color);
-}
-
-
-/*--------------------------------------------------------------
-# Recent Posts Section
---------------------------------------------------------------*/
-.recent-posts article {
-  background: var(--surface-color);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.recent-posts .post-img {
-  max-height: 240px;
-  margin: -30px -30px 15px -30px;
-  overflow: hidden;
-}
-
-.recent-posts .post-category {
+  padding: 15px 20px;
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin-bottom: 10px;
-}
-
-.recent-posts .title {
-  font-size: 20px;
-  font-weight: 700;
-  padding: 0;
-  margin: 0 0 20px 0;
-}
-
-.recent-posts .title a {
-  color: var(--heading-color);
-  transition: 0.3s;
-}
-
-.recent-posts .title a:hover {
-  color: var(--accent-color);
-}
-
-.recent-posts .post-author-img {
-  width: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.recent-posts .post-author {
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.recent-posts .post-date {
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin-bottom: 0;
-}
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
+/* Hover effect */
+.floating-live-button button:hover {
+  background-color: #5acce9;
+  transform: scale(1.1);
 }
 
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .floating-live-button {
+      right: 50%; /* Center horizontally */
+      bottom: 20px;
+      transform: translateX(50%);
+  }
 
-.contact .info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+  .floating-live-button button {
+      font-size: 14px;
+      padding: 10px 15px;
+  }
 }
 
 /*--------------------------------------------------------------
